@@ -1,0 +1,10 @@
+1)select * from cluster3
+2)select pressure1,pressure3 from cluster3 where pressure1 > 0.5 and pressure3 > 0.5 limit 10
+3)select mean(pressure2) from cluster3 group by time(1d)
+4) select max(/pressure/) from cluster3 group by time(1d) fill(none)
+5)select mean(pressure1) - mean(pressure2) from cluster3 group by time(1d) limit 14
+6)???
+SELECT mean(/pressure/) FROM cluster3 WHERE time >= 'T10:00:00' AND time < 'T10:00:00'
+7,8,9)
+10) select HOLT_WINTERS(first(pressure1), 12, 6) from cluster3 group by time(4h)
+
